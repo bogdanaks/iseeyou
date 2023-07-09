@@ -1,0 +1,128 @@
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+.video {
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.video video {
+  z-index: 2;
+}
+
+.canvas {
+  position: absolute;
+  z-index: 9999;
+}
+
+.faceDetected {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 30px;
+  height: 30px;
+  background-color: green;
+  border-radius: 10px;
+  z-index: 99999;
+}
+
+.faceNotDetected {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  border-radius: 10px;
+  z-index: 99999;
+}
+
+.face {
+  display: flex;
+  background-color: #ec87c0;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.eyes {
+  display: flex;
+  gap: 14px;
+  z-index: 9999;
+  overflow: hidden;
+  scale: 3;
+}
+
+.eye {
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  background: white;
+  overflow: hidden;
+  transition: 0.5s cubic-bezier(0.75, 0.25, 0.25, 0.75);
+}
+
+.pupil {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  content: " ";
+}
+
+.eyelidTop {
+  position: absolute;
+  width: 150%;
+  height: 5%;
+  top: 0;
+  left: 0;
+  background-color: #000;
+}
+
+.eyelidBottom {
+  position: absolute;
+  width: 150%;
+  height: 5%;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+}
+
+.closeEye {
+  position: relative;
+  display: inline-block;
+  border-radius: 10px;
+  height: 1px;
+  width: 60px;
+  background: white;
+  overflow: hidden;
+  transition: 0.5s cubic-bezier(0.75, 0.25, 0.25, 0.75);
+}
